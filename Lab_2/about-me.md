@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 I am Kaci
 
 I am from Paris
