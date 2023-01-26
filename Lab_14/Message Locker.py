@@ -73,11 +73,12 @@ Have a good day!!!
     ''')
 
     choice=int(input("If you want to encrypt press 1 and if you want to decrypt press 2 :"))
-    if choice==1:
-        encryption_process()
-    elif choice==2:
-        decryption_process()
-    else:
+    try: 
+        if choice==1:
+            encryption_process()
+        elif choice==2:
+            decryption_process()
+    except:
         choice=input("Please chose between, 1 or 2")
     print("\n")
     print('Thank you for using Message Locker! We hope to see you again !!')
@@ -85,9 +86,12 @@ Have a good day!!!
     
 def encryption_process():
 # This is the message encryption function, with the input as a string message in english
-    msg = input("Write down the message you wish to encrypt. It must be in English, it can contain numbers and these special characters only '.:;$!@'-_:)(][ \n")
     encrypted_msg = []
-    
+    try: 
+        msg = input("Write down the message you wish to encrypt. It must be in English, it can contain numbers and these special characters only '.:;$!@'-_:)(][ \n")
+    except:
+        msg = input("Please retry, your message must be in English, it can contain numbers and these special characters only '.:;$!@'-_:)(][ \n")
+
     # Returns the encrypted message
     for character in msg:
         encrypted_msg.append(dict_encrypt[character])
@@ -105,17 +109,20 @@ def decryption_process():
     decr_msg=[]
 
     #To splits the string 3 characters by 3 characters (to match the encryption key)
-    n=3
-    for index in range(0, len(encr_txt), n):
-        encr_lst.append(encr_txt[index : index + n])
-    print(encr_lst)
+    try:
+        n=3
+        for index in range(0, len(encr_txt), n):
+            encr_lst.append(encr_txt[index : index + n])
+        print(encr_lst)
     
     #Returns the decrypted message
-    for k in encr_lst:
-        decr_msg.append(reversed_dict_encrypt[k])
     
-    print("\n")
-    print("Here is your decrypted message : ", "\n", "".join(decr_msg))
-
+        for k in encr_lst:
+            decr_msg.append(reversed_dict_encrypt[k])
+        
+        print("\n")
+        print("Here is your decrypted message : ", "\n", "".join(decr_msg))
+    except:
+        print("Something went wront with the decryption")
     
 start_game()
