@@ -1,0 +1,36 @@
+Select *
+from crime_scene_report
+where date=20180115
+and type='murder'
+and city='SQL City';
+
+Select *
+from person
+where address_street_name = 'Northwestern Dr' 
+order by address_number desc;
+
+
+Select *
+from interview
+left join person 
+on interview.person_id=person.id
+where id=14887
+
+Select *
+from get_fit_now_member
+where membership_status='gold' and id like '48Z%'
+
+Select *
+from person
+where id=28819 or id=67318
+
+
+Select *
+from drivers_license
+where id=173289 or id=423327
+
+select * 
+from person
+where license_id=423327
+
+	Jeremy Bowers
