@@ -5,11 +5,18 @@
 
 ## Method
 
+- I started with get dummies to encode automatically categorical data 
+- For the risk, I have used an ordinal encoding 
 
 ## Library
-
+- pandas : getdummies
+- Scikit-Learn : OrdinalEncoder
+- Scikit-Learn : CategoricalEncoder
 
 ## Code
 
+- Check for main.ipynb
+
 ## Result
 
+- Check for main.ipynb
