@@ -27,3 +27,6 @@ from education_by_income;
 
 select *
 from coutries_per_income;
+
+select Countries_and_areas, Total
+from primary_education;
