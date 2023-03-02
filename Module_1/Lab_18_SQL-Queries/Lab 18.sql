@@ -1,27 +1,29 @@
 -- **1. What are the different genres?**
 select prime_genre from applestore
-group by prime_genre
-or 
-select distinct prime_genre from applestore
+group by prime_genre;
+-- or 
+select distinct prime_genre from applestore;
 
 -- **2. Which is the genre with the most apps rated?**
+-- could've used MAX/MIN
 
 select prime_genre, rating_count_tot from applestore
-order by rating_count_tot desc
+order by rating_count_tot desc;
 
 -- **3. Which is the genre with most apps?**
+-- could've used MAX/MIN
 
 select prime_genre, count(*) as hd
 from applestore
 group by prime_genre
-order by hd desc
+order by hd desc;
 
 -- **4. Which is the one with least?**
 
 select prime_genre, count(*) as hd
 from applestore
 group by prime_genre
-order by hd asc
+order by hd asc;
 
 -- **5. Find the top 10 apps most rated.**
 

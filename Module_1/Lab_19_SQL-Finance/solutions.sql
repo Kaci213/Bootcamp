@@ -1,4 +1,5 @@
 -- #### 1. From the `order_items` table, find the price of the highest priced order and lowest price order.
+-- MAX/MIN Functions
 select order_id, order_item_id, price from order_items
 order by price desc;
 
@@ -6,7 +7,7 @@ select order_id, order_item_id, price from order_items
 order by price asc;
 
 -- #### 2. From the `order_items` table, what is range of the shipping_limit_date of the orders?
-
+-- MAX/MIN Functions
 select shipping_limit_date from order_items
 order by shipping_limit_date asc;
 
@@ -14,14 +15,14 @@ select shipping_limit_date from order_items
 order by shipping_limit_date desc;
 
 -- #### 3. From the `customers` table, find the states with the greatest number of customers.
-
+-- MAX/MIN Functions
 select customer_state, count(*) as hd
 from customers
 group by customer_state
 order by hd desc;
 
 -- #### 4. From the `customers` table, within the state with the greatest number of customers, find the cities with the greatest number of customers.
-
+-- MAX/MIN Functions
 select customer_city, count(*) as hd
 from customers
 where customer_state = "SP"

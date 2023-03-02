@@ -25,6 +25,7 @@ on t.pub_id=p.pub_id
 group by a.au_id, full_name, p.pub_name;
 
 -- Challenge 3   titles/publisher 
+	-- SUM better than count s.title_id
 Select a.au_id, concat(a.au_fname, " ", a.au_lname) as full_name , count(s.title_id) as Nb_Title from
 authors a
 inner join titleauthor ta
@@ -36,6 +37,7 @@ order by Nb_Title desc
 limit 3;
 
 -- Challenge 4   titles/publisher 
+	-- missing IFNULL(SUM(sale.qty)
 Select a.au_id, concat(a.au_fname, " ", a.au_lname) as full_name , count(s.title_id) as Nb_Title from
 authors a
 left join titleauthor ta

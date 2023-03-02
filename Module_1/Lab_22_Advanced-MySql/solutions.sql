@@ -64,6 +64,7 @@ GROUP BY title_id, au_id
 order by tot_profit desc;
 
 -- CHALLENGE 2 Alternative solution
+	-- should've created temporary tables
 -- Step 1
 
 CREATE TABLE ppub.royalty_per_sale
@@ -97,6 +98,7 @@ GROUP BY  royalty_per_sale.au_id
 ORDER BY profits DESC LIMIT 3;
 
 -- CHallenge 3
+	-- should've created temporary tables
 
 select *
 from final_results;
